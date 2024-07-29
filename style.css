@@ -1,0 +1,254 @@
+:root{
+    --gray: rgb(71, 71, 71);
+    --primary: #171717;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #171717;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    max-width: 1280px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: transparent;
+    background-image: linear-gradient(to top, hsla(0, 0%, 0%, 0), hsla(0, 0%, 9%, 0.9), var(--primary));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+header > div {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+header > div > img { width: 35px; height: 35px; }
+header > div > p { font-size: 20px; color: #ccc; }
+#btnDelete {
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-size: 14px;
+    color: #ccc;
+    background-color: rgb(91, 91, 91);
+    cursor: pointer;
+}
+#btnDelete:hover { background-color: rgb(136, 136, 136); color: white; }
+#btnDelete:active, #delete-chat:active { opacity: 50%; }
+#delete-chat {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: none;
+}
+
+/* CHAT PANEL */
+.section-1{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    overflow-x: auto;
+}
+.section-1::-webkit-scrollbar { width: 0px;}
+.section-1::-webkit-scrollbar-track { background-color: transparent; }
+.section-1::-webkit-scrollbar-thumb { background-color: var(--gray); border-radius: 10px;}
+
+.chatbot-info {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: gray;
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.chatbot-info > span {
+    max-width: 300px;
+    text-align: center;
+}
+.chatbot-info > small {
+    margin-top: 10px;
+    font-size: 12px;
+    color: gray;
+}
+
+
+/* CHAT BOX */
+.bot-chat-box {
+    width: 100%;
+    height: max-content;
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: var(--gray);
+    background-color: rgba(66, 66, 66, 0.156);
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+}
+.bot-message-box{
+    min-width: 150px;
+    width: max-content;
+    width: 100%;
+    max-width: 720px;
+    min-height: 50px;
+    height: max-content;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 0px 30px 30px 40px;
+    background-color: rgba(66, 66, 66, 0.156);
+    background-color: rgba(142, 154, 158, 0.156);
+    color: #ccc;
+    text-align: start;
+    line-break: strict;
+    letter-spacing: 0.3px;
+    word-spacing: 1px;
+}
+.chat-box > img {
+    width: 40px;
+    height: 40px;
+}
+
+.user-chat-box {
+    width: 100%;
+    height: max-content;
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: var(--gray);
+    background-color: rgba(66, 66, 66, 0.156);
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+}
+.user-message-box{
+    min-width: 150px;
+    width: max-content;
+    width: 100%;
+    max-width: 720px;
+    min-height: 50px;
+    height: max-content;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 30px 0px 40px 30px;
+    background-color: var(--gray);
+    background-color: rgba(0, 247, 173, 0.156);
+    color: #ccc;
+    text-align: start;
+    line-break: strict;
+    letter-spacing: 0.3px;
+    word-spacing: 1px;
+}
+
+
+/* TEXT PANEL */
+.section-2{
+    width: 100%;
+    height: 120px;
+    height: max-content;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.text-container {
+    width: 100%;
+    height: max-content;
+    min-height: 60px;
+    padding: 5px 7px 5px 18px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+#txt-text{
+    width: 100%;
+    min-height: 30px;
+    height: 30px;
+    max-height: 100px;
+    resize: vertical;
+    box-sizing: border-box;
+    outline: unset;
+    border: unset;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+}
+#txt-text::placeholder {
+    padding-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+#txt-text::-webkit-scrollbar { width: 7px;}
+#txt-text::-webkit-scrollbar-track { background-color: transparent; }
+#txt-text::-webkit-scrollbar-thumb { background-color: var(--gray); border-radius: 10px;}
+
+#btn-send{
+    width: 40px;
+    height: 40px;
+    padding: 9px;
+    box-sizing: border-box;
+    background-color: transparent;
+    background-color: var(--gray);
+    outline: unset;
+    border: unset;
+    border-radius: 15px;
+}
+#btn-send:hover {
+    background-color: gray;
+}
+#btn-send:active {
+    opacity: 50%;
+}
+
+#btn-send > img {
+    width: 100%;
+    height: 100%;
+}
+
+
+@media only screen and (max-width: 1280px)
+{
+    #btnDelete { display: none;}
+    #delete-chat { display: block;}
+    .bot-chat-box > img { width: 30px; height: 30px; }
+    .section-1::-webkit-scrollbar { width: 3px;}
+    .user-message-box, .bot-message-box { max-width: 300px; width: max-content;}
+    .user-message-box{ border-radius: 20px 0px 20px 20px;}
+    .bot-message-box{ border-radius: 0px 20px 20px 20px; }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="img/app-icon.png">
+    <title>Ronie Chatbot</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="img/app-icon.png" alt="logo">
+            <p>Ronie Chatbot</p>
+        </div>
+        <div>
+            <button id="btnDelete" onclick="DeleteChat()"> Delete Conversation </button>
+            <img src="img/icon-delete.png" alt="delete" id="delete-chat" onclick="DeleteChat()">
+        </div>
+    </header>
+    <div class="container">
+        <section class="section-1" id="chatbox">
+            <div class="chatbot-info">
+                <img src="img/icon-bot.png" alt="logo">
+                <h1>Let's Chat!</h1>
+                <span> Hello humans! I'm here to assist you. Feel free to ask me anything or share what's on your mind. How can I help you today? </span>
+                <small> Developed by: Ronie Casaclang </small>
+            </div>
+            
+            <!-- Chat message display here 
+            <div class="bot-chat-box">
+                <div class="bot-message-box"> Some content here.</div>
+            </div>
+            <div class="user-chat-box">
+                <div class="user-message-box"> Some content here. </div>
+            </div> -->
+        </section>
+        <section class="section-2">
+            <div class="text-container">
+                <textarea id="txt-text" placeholder="Enter text..." onkeydown="EnterSend(event)"></textarea>
+                <button id="btn-send" onclick="SendChat(1)">
+                    <img src="img/icon-send.png" alt="Send">
+                </button>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+    <script src="bot.js"></script>
+    <script>
+        InputAvailability(false);
+        BotMessage('');
+    </script>
+</body>
+</html>
