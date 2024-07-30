@@ -17,7 +17,7 @@ function getResponse(msg)
     else if (msg.includes('hello') || msg.includes('hi') || msg.includes('ok') || msg.includes('okay')) 
         return "Glad you came here. Let's start this conversation right now!" + choice1;
     else if (msg === 'what') 
-        return "My name is Ronie Chatbot, or you can call me <RBot24> to make it short." + choice2;
+        return "My name is Ronie Chatbot, or you can call me RBot to make it short." + choice2;
     else if (msg === 'who') 
         return "My creator is Master Ronie Casaclang. He has a deep passion and a great love in Software Development. \n\n\nGet to know him more in LinkedIn using this link https://www.linkedin.com/in/ronie-casaclang." + choice2;
     else if (msg === 'why') 
