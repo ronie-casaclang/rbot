@@ -1,9 +1,8 @@
 
-function BotMessage(human)
+function BotMessage(msg)
 {
     setTimeout(() => {
-        CreateMsg(getResponse(human.toLowerCase()), 2);
-        InputAvailability(true);
+        CreateNewMessage(getResponse(msg.toLowerCase()), 2);
     }, 2000);
 }
 

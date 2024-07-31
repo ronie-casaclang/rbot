@@ -14,46 +14,45 @@ function DeleteChat()
                 con.removeChild(con.lastElementChild);
             }
             TOTAL_CHAT = 0;
+            BotMessage('');
         }
     }
 }
 
+
 function EnterSend(event)
 {
-    if (event.key === 'Enter' && !event.shiftKey)
+    if (window.innerWidth > 600)
     {
-        event.preventDefault();
-        SendChat(1);
+        if (event.key === 'Enter' && !event.shiftKey)
+        {
+            event.preventDefault();
+            SendMessage(1);
+        }
     }
 }
 
-function SendChat(numType)
+
+function SendMessage(type)
 {
     var txtbox = document.getElementById('txt-text');
     if (txtbox.value.trim() !== '')
     {
-        CreateMsg(txtbox.value.trim(), numType);
+        CreateNewMessage(txtbox.value.trim(), type);
         BotMessage(txtbox.value.trim());
-        InputAvailability(false)
+        txtbox.value = '';
     }
     txtbox.focus();
 }
 
-function InputAvailability(result)
-{
-    var txtbox = document.getElementById('txt-text');
-    txtbox.disabled = !result;
-    txtbox.value = '';
-    txtbox.focus();
-}
 
-function CreateMsg(message, type)
+function CreateNewMessage(msg, type)
 {
     // create message box
     var msgbox =  document.createElement('div');
     var mbox_class = (type===1 ? 'user-message-box' : 'bot-message-box');
     msgbox.classList.add(mbox_class);
-    msgbox.innerText = message;
+    msgbox.innerText = msg;
     
     // create chat box
     var chatbox =  document.createElement('div');

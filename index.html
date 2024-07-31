@@ -38,7 +38,7 @@
         <section class="section-2">
             <div class="text-container">
                 <textarea id="txt-text" placeholder="Enter text..." onkeydown="EnterSend(event)"></textarea>
-                <button id="btn-send" onclick="SendChat(1)">
+                <button id="btn-send" onclick="SendMessage(1)">
                     <img src="img/icon-send.png" alt="Send">
                 </button>
             </div>
@@ -46,9 +46,6 @@
     </div>
     <script src="script.js"></script>
     <script src="bot.js"></script>
-    <script>
-        InputAvailability(false);
-        BotMessage('');
-    </script>
+    <script> document.addEventListener('DOMContentLoaded', ()=>{ BotMessage(''); }); </script>
 </body>
 </html>
